@@ -24,26 +24,37 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 
-" Single mappings
+"""""""""""""""""""""""""""""""
+" Single Mappings:
+"""""""""""""""""""""""""""""""
 let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment' ]
-let g:which_key_map['.'] = [ ':e $MYVIMRC'                , 'open init' ]
 let g:which_key_map[';'] = [ ':Commands'                  , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                     , 'balance windows' ]
-let g:which_key_map[','] = [ 'Startify'                   , 'start screen' ]
-let g:which_key_map['d'] = [ ':bd'                        , 'delete buffer']
 let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
 let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['q'] = [ 'q'                          , 'quit' ]
+let g:which_key_map['q'] = [ ':bd'                        , 'delete Buffer' ]
 let g:which_key_map['r'] = [ ':RnvimrToggle'              , 'ranger' ]
-let g:which_key_map['S'] = [ ':SSave'                     , 'save session' ]
 let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 let g:which_key_map['w'] = [ 'w'                          , 'write' ]
+let g:which_key_map['x'] = [ '<C-w>c'                     , 'close Pane' ]
 let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
 
-" Group mappings
 
+
+"""""""""""""""""""""""""""""""
+" Special Single Mappings:
+"""""""""""""""""""""""""""""""
+noremap <silent> <leader>p "+p
+let g:which_key_map.p = 'paste from clipboard'
+
+
+
+
+"""""""""""""""""""""""""""""""
+" Group Mappings:
+"""""""""""""""""""""""""""""""
 " a is for actions
 let g:which_key_map.a = {
       \ 'name' : '+actions' ,
@@ -54,6 +65,7 @@ let g:which_key_map.a = {
       \ 's' : [':let @/ = ""'            , 'remove search highlight'],
       \ 't' : [':FloatermToggle'         , 'terminal'],
       \ 'v' : [':Vista!!'                , 'tag viewer'],
+      \ '.' : [':source $MYVIMRC'        , 'reload vim'],
       \ }
 
 " b is for buffer
@@ -180,6 +192,87 @@ let g:which_key_map.t = {
       \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
 
+" o is for open
+let g:which_key_map.o = {
+      \ 'name' : '+open' ,
+      \ 'v' : [':e $MYVIMRC'  , 'open vim init'],
+      \ 's' : ['Startify'     , 'open start screen'],
+      \ }
 
+
+"""""""""""""""""""""""""""""""
+" Special Group Mappings:
+"""""""""""""""""""""""""""""""
+nnoremap  <Leader>oe :call <SID>edit_env_file()<CR>
+let g:which_key_map.o.e = 'open .env file'
+
+
+
+" y for yank
+let g:which_key_map.y = { 'name' : '+yank' }
+
+noremap <silent> <leader>yy "+y
+let g:which_key_map.y.y = 'yank to clipboard'
+noremap <silent> <leader>yY "+Y
+let g:which_key_map.y.Y = 'yank line to clipboard'
+nmap <leader>yf :let @"=<SID>yank_file()<CR>
+let g:which_key_map.y.f = 'yank file path'
+
+
+"""""""""""""""""""""""""""""""
+" Register Which Key:
+"""""""""""""""""""""""""""""""
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
+
+
+"""""""""""""""""""""""""""""""
+" Functions:
+"""""""""""""""""""""""""""""""
+
+" find and edit a ".env" file in a git project dir
+function! s:edit_env_file()
+  let dir = finddir('.git/..', expand('%:p:h').';')
+  let file = findfile('.env', dir)
+  execute "e ".fnameescape(file)
+endfunction
+
+
+" Bug: Potential problems if dir name has '.' in it
+" Copy file path, remove extention, 'src/' & 'index.*' if its at the end
+function! s:yank_file()
+  let path = expand("%")
+  let pathList = split(path, '\.')
+
+  " name is in root
+  if(len(pathList) == 0)
+    echo path
+    return path
+  endif
+
+  " remove extention if its a js or a ts file
+  let ext = pathList[len(pathList) - 1]
+  if(ext == 'js' || ext == 'jsx' || ext == 'ts' || ext == 'tsx')
+    let path = pathList[0]
+    let pathList = split(path, '/')
+  endif
+
+  " check if file ends with /index, then remove it
+  let lastSegment = pathList[len(pathList) - 1]
+  if(lastSegment == 'index')
+    let list = split(path, '/index')
+    let path = list[0]
+  endif
+
+  " check if file starts with src/, then remove it
+  let firstSegment = pathList[0]
+  if(firstSegment == 'src')
+    let list = split(path, 'src/')
+    let path = list[0]
+  endif
+
+  " last item is not an index
+  echo path
+  return path
+endfunction
+

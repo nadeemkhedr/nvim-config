@@ -24,10 +24,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-rooter'
   " auto set indent settings
   Plug 'tpope/vim-sleuth'
-
   " Text Navigation
   Plug 'unblevable/quick-scope'
-  " Plug 'easymotion/vim-easymotion'
   " Add some color
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'junegunn/rainbow_parentheses.vim'
@@ -41,23 +39,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'alvan/vim-closetag'
   " Themes
   Plug 'christianchiarulli/onedark.vim'
-  " Plug 'kaicataldo/material.vim'
-  " Plug 'NLKNguyen/papercolor-theme'
-  " Plug 'tomasiser/vim-code-dark'
   " Intellisense
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Status Line
   Plug 'vim-airline/vim-airline'
-  " Plug 'vim-airline/vim-airline-themes'
   " Ranger
-  " Plug 'francoiscabrol/ranger.vim'
-  " Plug 'rbgrouleff/bclose.vim'
   Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   " Git
-  " Plug 'mhinz/vim-signify'
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
@@ -72,17 +63,20 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'liuchengxu/vim-which-key'
   " Zen mode
   Plug 'junegunn/goyo.vim'
-  " Making stuff
-  Plug 'neomake/neomake'
-  " Snippets TODO fix TAB hijack
-  " Plug 'SirVer/ultisnips'
-  " Better Comments
-  " Plug 'jbgutierrez/vim-better-comments'
-  " Echo doc
-  " Plug 'Shougo/echodoc.vim'
-  " Interactive code
-  Plug 'metakirby5/codi.vim'
 
+  " camel case motions
+  Plug 'bkad/CamelCaseMotion'
+
+  " editor config plugin
+  Plug 'editorconfig/editorconfig-vim'
+
+  " hilight yanked lines
+  Plug 'machakann/vim-highlightedyank'
+
+  " snippets
+  Plug 'honza/vim-snippets'
+
+  Plug 'metakirby5/codi.vim'
 
 call plug#end()
 

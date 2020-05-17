@@ -1,25 +1,27 @@
-  " let g:coc_global_extensions = [
-  "   \ 'coc-snippets',
-  "   \ 'coc-actions',
-  "   \ 'coc-emmet',
-  "   \ 'coc-pairs',
-  "   \ 'coc-tsserver',
-  "   \ 'coc-floaterm',
-  "   \ 'coc-html',
-  "   \ 'coc-css',
-  "   \ 'coc-cssmodules',
-  "   \ 'coc-yaml',
-  "   \ 'coc-python',
-  "   \ 'coc-explorer',
-  "   \ 'coc-svg',
-  "   \ 'coc-prettier',
-  "   \ 'coc-vimlsp',
-  "   \ 'coc-flutter',
-  "   \ 'coc-xml',
-  "   \ 'coc-yank',
-  "   \ 'coc-json',
-  "   \ 'coc-vimtex',
-  "   \ ]
+" coc-word add more words for auto completion
+" coc-emoji add : auto complete for emoji in markdown files
+" coc-spell-checker: spell checker, use code action to see the list
+" coc-actions: dropdown style for actions works on neovim
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \ 'coc-word',
+  \ 'coc-spell-checker',
+  \ 'coc-emoji',
+  \ 'coc-actions',
+  \ 'coc-html',
+  \ 'coc-css',
+  \ 'coc-cssmodules',
+  \ 'coc-go',
+  \ 'coc-explorer',
+  \ 'coc-emmet',
+  \ 'coc-floaterm',
+  \ 'coc-svg',
+  \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
