@@ -1,12 +1,5 @@
 {
-  // suggestions
-  // "suggest.echodocSupport": true,
-  // TODO add more labels and give them cool glyphs
-  "suggest.completionItemKindLabels": {
-    "text": "t",
-    "method": "m",
-    "function": "f"
-  },
+  "suggest.enablePreselect": true,
 
   // diagnostics
   "diagnostic.errorSign": "✗",
@@ -27,6 +20,9 @@
     "css",
     "markdown",
     "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
     "graphql",
     "html",
     "yaml",
@@ -48,7 +44,11 @@
   "explorer.previewAction.onHover": false,
   "explorer.icon.enableVimDevicons": false,
   "explorer.keyMappings": {
-    "<cr>": ["expandable?", "expand", "open"],
+    "<cr>": [
+      "expandable?",
+      ["expanded?", "collapse", "expand"],
+      "open:sourceWindow"
+    ],
     "v": "open:vsplit"
   },
 
@@ -59,7 +59,8 @@
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
     }
-  }
+  },
+  "cSpell.userWords": ["xlarge"]
 
   // TODO language servers
   // TODO g:coc_global_extensions

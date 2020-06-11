@@ -28,26 +28,41 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'unblevable/quick-scope'
   " Add some color
   Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'junegunn/rainbow_parentheses.vim'
-  " Better Syntax Support
-  Plug 'sheerun/vim-polyglot'
+  " Better Syntax Support for all languages
+  "Plug 'sheerun/vim-polyglot'
+  "
+  " JS Syntax
+  Plug 'othree/yajs.vim'
+  Plug 'othree/es.next.syntax.vim'
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'maxmellon/vim-jsx-pretty'
+  " Emmet
+  Plug 'mattn/emmet-vim'
   " Cool Icons
   Plug 'ryanoasis/vim-devicons'
   " Auto pairs for '(' '[' '{' 
   Plug 'jiangmiao/auto-pairs'
   " Closetags
   Plug 'alvan/vim-closetag'
-  " Themes
+  " colorscheme
+  Plug 'flazz/vim-colorschemes'
+  Plug 'rafi/awesome-vim-colorschemes'
   Plug 'christianchiarulli/onedark.vim'
+
   " Intellisense
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
   " Status Line
-  Plug 'vim-airline/vim-airline'
+  "Plug 'vim-airline/vim-airline'
+  Plug 'itchyny/lightline.vim'
+
   " Ranger
   Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+
+  Plug 'mileszs/ack.vim'
   " Git
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
@@ -70,7 +85,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " editor config plugin
   Plug 'editorconfig/editorconfig-vim'
 
-  " hilight yanked lines
+  " add indent lines
+  Plug 'Yggdroot/indentLine'
+
+  " hi-light yanked lines
   Plug 'machakann/vim-highlightedyank'
 
   " snippets

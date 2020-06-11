@@ -24,9 +24,7 @@ set autoindent                          " Good auto indent
 set laststatus=2                        " Always display the status line
 set number                              " Line numbers
 set relativenumber                      " Relative numbers
-set cursorline                          " Enable highlighting of the current line
-set background=dark                     " tell vim what the background color looks like
-set showtabline=2                       " Always show tabs 
+"set showtabline=2                      " Always show tabs 
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set noswapfile                          " Disable swap files
 set nobackup                            " This is recommended by coc
@@ -34,20 +32,17 @@ set nowritebackup                       " This is recommended by coc
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 set updatetime=300                      " Faster completion
-set timeoutlen=100                      " By default timeoutlen is 1000 ms
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+"set timeoutlen=100                     " By default timeoutlen is 1000 ms
+"set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
+set inccommand=split                    " substitute command live search
 set guifont=Hack\ Nerd\ Font
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " set mmp=1300
 " set autochdir                           " Your working directory will always be the same as your working directory
 " set foldcolumn=2                        " Folding abilities
-
-" au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-
-" You can't stop me
-cmap w!! w !sudo tee %
-
-
+"
+set cursorline                          " Enable highlighting of the current line
+set background=dark                     " tell vim what the background color looks like
+set nospell                             " Related to theme somehow
+"set synmaxcol=200                       " Syntax coloring lines that are too long just slows down the world

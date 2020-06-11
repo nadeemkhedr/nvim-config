@@ -60,6 +60,7 @@ let g:which_key_map.a = {
       \ 'name' : '+actions' ,
       \ 'c' : [':ColorizerToggle'        , 'colorizer'],
       \ 'e' : [':CocCommand explorer'    , 'explorer'],
+      \ 'l' : [':IndentLinesToggle'      , 'toggle indent line'],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
       \ 's' : [':let @/ = ""'            , 'remove search highlight'],
@@ -67,6 +68,8 @@ let g:which_key_map.a = {
       \ 'v' : [':Vista!!'                , 'tag viewer'],
       \ '.' : [':source $MYVIMRC'        , 'reload vim'],
       \ }
+nnoremap <Leader>aa :Ack!<Space>
+let g:which_key_map.a.a = 'Search using Ack'
 
 " b is for buffer
 let g:which_key_map.b = {
@@ -151,8 +154,8 @@ let g:which_key_map.l = {
       \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
       \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
       \ 'e' : [':CocList extensions'                 , 'extensions'],
-      \ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
-      \ 'F' : ['<Plug>(coc-format)'                  , 'format'],
+      \ 'F' : ['<Plug>(coc-format-selected)'         , 'format selected'],
+      \ 'f' : ['<Plug>(coc-format)'                  , 'format'],
       \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
       \ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
       \ 'I' : [':CocList diagnostics'                , 'diagnostics'],
@@ -175,6 +178,9 @@ let g:which_key_map.l = {
       \ 'z' : [':CocDisable'                         , 'disable CoC'],
       \ 'Z' : [':CocEnable'                          , 'enable CoC'],
       \ }
+nmap <silent> <leader>lg :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+xmap <silent> <leader>lg :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+let g:which_key_map.l.g = 'Action from coc-action'
 
 " t is for terminal
 let g:which_key_map.t = {
@@ -198,19 +204,11 @@ let g:which_key_map.o = {
       \ 'v' : [':e $MYVIMRC'  , 'open vim init'],
       \ 's' : ['Startify'     , 'open start screen'],
       \ }
-
-
-"""""""""""""""""""""""""""""""
-" Special Group Mappings:
-"""""""""""""""""""""""""""""""
 nnoremap  <Leader>oe :call <SID>edit_env_file()<CR>
 let g:which_key_map.o.e = 'open .env file'
 
-
-
 " y for yank
 let g:which_key_map.y = { 'name' : '+yank' }
-
 noremap <silent> <leader>yy "+y
 let g:which_key_map.y.y = 'yank to clipboard'
 noremap <silent> <leader>yY "+Y
@@ -229,6 +227,10 @@ call which_key#register('<Space>', "g:which_key_map")
 """""""""""""""""""""""""""""""
 " Functions:
 """""""""""""""""""""""""""""""
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
 
 " find and edit a ".env" file in a git project dir
 function! s:edit_env_file()

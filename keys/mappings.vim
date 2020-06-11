@@ -7,6 +7,13 @@ let mapleader="\<space>"
 " let localleader=" "
 nnoremap <Space> <Nop>
 
+"Enter add line in normal mode
+nmap <CR> o<Esc>
+
+" paste without yanking replaced text in visual mode
+vnoremap <silent> p "_dP
+vnoremap <silent> P "_dp
+
 " Simulate same TAB behavior in VSCode
 nmap <Tab> :Tabnext<CR>
 nmap <S-Tab> :Tabprev<CR>
