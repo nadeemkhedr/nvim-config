@@ -56,6 +56,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   "Plug 'vim-airline/vim-airline'
   Plug 'itchyny/lightline.vim'
 
+  " UI smooth scrolling
+  Plug 'yuttie/comfortable-motion.vim' 
   " Ranger
   Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
   " FZF

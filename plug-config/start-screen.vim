@@ -22,7 +22,6 @@ function! StartifyEntryFormat()
     endfunction
 
 let g:startify_bookmarks = [
-            \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'p': '~/work/procella/client' },
             \ { 'z': '~/.zshrc' },
             \ ]
