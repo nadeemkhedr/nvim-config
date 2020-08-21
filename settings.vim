@@ -32,7 +32,7 @@ set nowritebackup                       " This is recommended by coc
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 set updatetime=300                      " Faster completion
-"set timeoutlen=100                     " By default timeoutlen is 1000 ms
+set timeoutlen=500                     " By default timeoutlen is 1000 ms
 "set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
 set inccommand=split                    " substitute command live search
@@ -46,3 +46,4 @@ set cursorline                          " Enable highlighting of the current lin
 set background=dark                     " tell vim what the background color looks like
 set nospell                             " Related to theme somehow
 "set synmaxcol=200                       " Syntax coloring lines that are too long just slows down the world
+

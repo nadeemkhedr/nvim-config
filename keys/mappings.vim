@@ -2,6 +2,7 @@ imap <C-h> <C-w>h
 imap <C-j> <C-w>j
 imap <C-k> <C-w>k
 imap <C-l> <C-w>l
+
 " g Leader key
 let mapleader="\<space>"
 " let localleader=" "
@@ -35,6 +36,18 @@ nnoremap <silent> <TAB> :bnext<CR>
 " SHIFT-TAB will go back
 nnoremap <silent> <S-TAB> :bprevious<CR>
 
+" Move selected line / block of text in visual mode
+" shift + k to move up
+" shift + j to move down
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+
+" Move selected line / block of text in visual mode
+" shift + k to move up
+" shift + j to move down
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+
 " Alternate way to save
 nnoremap <silent> <C-s> :w<CR>
 " Alternate way to quit
@@ -50,6 +63,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" popup
+nnoremap <C-p> <C-w>p
 
 " Terminal window navigation
 tnoremap <C-h> <C-\><C-N><C-w>h

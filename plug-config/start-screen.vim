@@ -22,8 +22,8 @@ function! StartifyEntryFormat()
     endfunction
 
 let g:startify_bookmarks = [
-            \ { 'p': '~/work/procella/client' },
             \ { 'z': '~/.zshrc' },
+            \ { 'n': '~/notes.md' },
             \ ]
 
 let g:startify_enable_special = 0

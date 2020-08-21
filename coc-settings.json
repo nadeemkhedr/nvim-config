@@ -53,15 +53,36 @@
     "o": ["expandable?", ["expanded?", "collapse", "expand"], "open"]
   },
 
+  "go.goplsOptions": {
+    "completeUnimported": true
+  },
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".git/"],
+      "disableWorkspaceFolders": true,
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "completeUnimported": true
+      }
     }
   },
-  "cSpell.userWords": ["xlarge"]
+  "yaml.schemas": {
+    "kubernetes": "/*.y*ml"
+  },
+  "cSpell.languageSettings": [
+    {
+      "languageId": "go",
+      "enabled": false
+    }
+  ],
+  "cSpell.userWords": ["bson", "kubernetes", "mongodb", "uuid", "xlarge"]
 
   // TODO language servers
   // TODO g:coc_global_extensions

@@ -29,6 +29,7 @@ luafile $HOME/.config/nvim/plug-config/plug-colorizer.lua
 " * search for text under the word
 " m then anything to mark, ` then same char to go to mark
 " <c-^> switch between last 2 edited files
+" o in visual mode change cursor position between start/end
 "
 " # COC configs
 " # Shortcuts:

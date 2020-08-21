@@ -8,10 +8,6 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-  " Change dates fast
-  Plug 'tpope/vim-speeddating'
-  " Convert binary, hex, etc..
-  Plug 'glts/vim-radical'
   " Files
   Plug 'tpope/vim-eunuch'
   " Repeat stuff
@@ -24,18 +20,21 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-rooter'
   " auto set indent settings
   Plug 'tpope/vim-sleuth'
-  " Text Navigation
+  " Text Navigation/Find
+  Plug 'easymotion/vim-easymotion'
   Plug 'unblevable/quick-scope'
   " Add some color
   Plug 'norcalli/nvim-colorizer.lua'
   " Better Syntax Support for all languages
   "Plug 'sheerun/vim-polyglot'
-  "
   " JS Syntax
   Plug 'othree/yajs.vim'
   Plug 'othree/es.next.syntax.vim'
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'maxmellon/vim-jsx-pretty'
+  " Go
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'bitfield/vim-gitgo'
   " Emmet
   Plug 'mattn/emmet-vim'
   " Cool Icons
@@ -65,6 +64,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/fzf.vim'
 
   Plug 'mileszs/ack.vim'
+  " Mark gutter
+  Plug 'kshenoy/vim-signature'
   " Git
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
@@ -80,25 +81,26 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'liuchengxu/vim-which-key'
   " Zen mode
   Plug 'junegunn/goyo.vim'
-
   " camel case motions
   Plug 'bkad/CamelCaseMotion'
-
   " editor config plugin
   Plug 'editorconfig/editorconfig-vim'
-
   " add indent lines
   Plug 'Yggdroot/indentLine'
-
+  "Plug 'lukas-reineke/indent-blankline.nvim'
   " hi-light yanked lines
   Plug 'machakann/vim-highlightedyank'
-
   " snippets
   Plug 'honza/vim-snippets'
-
+  " scratchpad
   Plug 'metakirby5/codi.vim'
-
-call plug#end()
+  " notes
+  Plug 'vimwiki/vimwiki'
+  " Games
+  Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+  " Ascii art
+  Plug 'fadein/vim-FIGlet'
+  call plug#end()
 
 " Automatically install missing plugins on startup
 autocmd VimEnter *

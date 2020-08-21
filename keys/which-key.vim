@@ -37,7 +37,6 @@ let g:which_key_map['q'] = [ ':bd'                        , 'delete Buffer' ]
 let g:which_key_map['r'] = [ ':RnvimrToggle'              , 'ranger' ]
 let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
-let g:which_key_map['w'] = [ 'w'                          , 'write' ]
 let g:which_key_map['x'] = [ '<C-w>c'                     , 'close Pane' ]
 let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
 
@@ -171,6 +170,7 @@ let g:which_key_map.l = {
       \ 'r' : ['<Plug>(coc-rename)'                  , 'rename'],
       \ 'R' : ['<Plug>(coc-references)'              , 'references'],
       \ 's' : [':CocList -I symbols'                 , 'references'],
+      \ 'S' : [':CocList snippets'                   , 'snippets'],
       \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
       \ 'u' : [':CocListResume'                      , 'resume list'],
       \ 'U' : [':CocUpdate'                          , 'update CoC'],
@@ -201,8 +201,11 @@ let g:which_key_map.t = {
 " o is for open
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
-      \ 'v' : [':e $MYVIMRC'  , 'open vim init'],
-      \ 's' : ['Startify'     , 'open start screen'],
+      \ 'v' : [':e $MYVIMRC'                 , 'open vim init'],
+      \ 's' : ['Startify'                    , 'open start screen'],
+      \ 'n' : [':e ~/notes.md'               , 'open notes.md'],
+      \ 'k' : [':e ~/.config/zsh/kube.zsh'   , 'open k8s zsh config'],
+      \ 'z' : [':e ~/.zshrc'                 , 'open zshrc'],
       \ }
 nnoremap  <Leader>oe :call <SID>edit_env_file()<CR>
 let g:which_key_map.o.e = 'open .env file'
@@ -216,6 +219,13 @@ let g:which_key_map.y.Y = 'yank line to clipboard'
 nmap <leader>yf :let @"=<SID>yank_file()<CR>
 let g:which_key_map.y.f = 'yank file path'
 
+" w for wiki
+let g:which_key_map.w = { 'name' : '+wiki' }
+let g:which_key_map.w.w = 'Open default wiki index file.'
+let g:which_key_map.w.t = 'Open default wiki index file in a new tab.'
+let g:which_key_map.w.s = 'Select and open wiki index file.'
+let g:which_key_map.w.d = 'Delete wiki file you are in.'
+let g:which_key_map.w.r = 'Rename wiki file you are in.'
 
 """""""""""""""""""""""""""""""
 " Register Which Key:

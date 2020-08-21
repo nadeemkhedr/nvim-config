@@ -1,13 +1,43 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Camel Case Motion:
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => camel case motion:
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:camelcasemotion_key = ','
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indent Line
+" => vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_enabled = 0
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
+" Color hilighting
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+
+" hilight vars that are the same on hover
+let g:go_auto_sameids = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vimwiki
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 1}]
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Indent Line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set list lcs=tab:\|\ " show indent lines when using tabs
+let g:indentLine_enabled = 1
+let g:indentLine_conceallevel = 0
+"let g:indent_blankline_char = ['|', '¦', '┆', '┊']
+"let g:indent_blankline_char = '|'
 
 """""""""""""""""""""""""""""""
 " => Emmet
