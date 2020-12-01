@@ -18,6 +18,8 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
+
+source $HOME/.config/nvim/secrets.vim
 luafile $HOME/.config/nvim/plug-config/plug-colorizer.lua
 
 " Used Shortcuts:

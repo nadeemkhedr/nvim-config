@@ -44,7 +44,7 @@
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.icon.enableVimDevicons": false,
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "<cr>": [
       "expandable?",
       ["expanded?", "collapse", "expand"],
@@ -53,9 +53,10 @@
     "v": "open:vsplit",
     "o": ["expandable?", ["expanded?", "collapse", "expand"], "open"]
   },
-
-  "go.goplsOptions": {
-    "completeUnimported": true
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": true
   },
   "languageserver": {
     "bash": {
@@ -68,10 +69,7 @@
       "command": "gopls",
       "rootPatterns": ["go.mod", ".git/"],
       "disableWorkspaceFolders": true,
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "completeUnimported": true
-      }
+      "filetypes": ["go"]
     }
   },
   "yaml.schemas": {
@@ -84,9 +82,4 @@
     }
   ],
   "cSpell.userWords": ["bson", "kubernetes", "mongodb", "uuid", "xlarge"]
-
-  // TODO language servers
-  // TODO g:coc_global_extensions
-  // TODO b:coc_suggest_disable=1 GOYO
-  // TODO add to paths.vim g:coc_node_path
 }

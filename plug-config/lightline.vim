@@ -1,5 +1,7 @@
+
+      "\ 'colorscheme': 'gruvbox',
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'zoom', 'filenameOrLastFolderOfIndex', 'modified', 'readonly'] ]

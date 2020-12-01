@@ -21,6 +21,7 @@ let g:coc_global_extensions = [
   \ 'coc-floaterm',
   \ 'coc-svg',
   \ 'coc-yaml',
+  \ 'coc-fzf-preview',
   \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.

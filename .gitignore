@@ -2,4 +2,4 @@ session
 autoload/plugged/*
 
 plug-config/paths.vim
-
+secrets.vim

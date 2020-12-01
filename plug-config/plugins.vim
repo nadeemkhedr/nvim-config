@@ -49,7 +49,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'flazz/vim-colorschemes'
   Plug 'rafi/awesome-vim-colorschemes'
   Plug 'christianchiarulli/onedark.vim'
-
+  Plug 'christianchiarulli/nvcode-color-schemes.vim'
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/playground'
   " Intellisense
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -60,10 +62,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " UI smooth scrolling
   Plug 'yuttie/comfortable-motion.vim' 
   " Ranger
-  Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+  "Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 
   Plug 'mileszs/ack.vim'
   " Mark gutter
@@ -73,7 +76,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
   Plug 'junegunn/gv.vim'
-  " Terminal
+  Plug 'mattn/vim-gist'
+  Plug 'mattn/webapi-vim' " required by gist
+  "Terminal
   Plug 'voldikss/vim-floaterm'
   " Start Screen
   Plug 'mhinz/vim-startify'
@@ -94,6 +99,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'machakann/vim-highlightedyank'
   " snippets
   Plug 'honza/vim-snippets'
+  " undo time travel
+  Plug 'mbbill/undotree'
   " scratchpad
   Plug 'metakirby5/codi.vim'
   " notes
