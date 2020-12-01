@@ -10,9 +10,11 @@ let g:camelcasemotion_key = ','
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_def_mapping_enabled = 0
-let g:go_doc_keywordprg_enabled = 0
-" Color hilighting
+" let g:go_def_mapping_enabled = 0
+" let g:go_doc_keywordprg_enabled = 0
+" let g:go_code_completion_enabled = 0
+
+"Color hilighting
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -23,12 +25,18 @@ let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 
 " hilight vars that are the same on hover
-let g:go_auto_sameids = 1
+" let g:go_auto_sameids = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimwiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 1}]
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => window-swap
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:windowswap_map_keys = 0 "prevent default bindings
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Indent Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,6 +106,7 @@ let g:vista_fzf_preview = ['right:50%']
 
 let g:vista#renderer#enable_icon = 1
 
+let g:vista_sidebar_width = 50
 let g:vista#renderer#icons = {
 \   "function": "\uf794",
 \   "variable": "\uf71b",

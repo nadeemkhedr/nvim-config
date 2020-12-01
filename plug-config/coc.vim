@@ -16,7 +16,7 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-cssmodules',
-  \ 'coc-go',
+  "\ 'coc-go',
   \ 'coc-explorer',
   \ 'coc-floaterm',
   \ 'coc-svg',

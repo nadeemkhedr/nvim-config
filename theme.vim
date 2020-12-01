@@ -7,8 +7,8 @@ if (has("termguicolors"))
 endif
 "hi Comment cterm=italic
 
-colorscheme purify
-"colorscheme gruvbox
+"colorscheme purify
+colorscheme gruvbox
 "colorscheme material-theme
 
 

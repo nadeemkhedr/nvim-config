@@ -42,8 +42,7 @@ set guifont=Hack\ Nerd\ Font
 " set autochdir                           " Your working directory will always be the same as your working directory
 " set foldcolumn=2                        " Folding abilities
 "
-set cursorline                          " Enable highlighting of the current line
+"set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set nospell                             " Related to theme somehow
 "set synmaxcol=200                       " Syntax coloring lines that are too long just slows down the world
-

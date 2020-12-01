@@ -23,10 +23,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Text Navigation/Find
   Plug 'easymotion/vim-easymotion'
   Plug 'unblevable/quick-scope'
+  Plug 'dhruvasagar/vim-zoom'
+  Plug 'wesQ3/vim-windowswap'
   " Add some color
   Plug 'norcalli/nvim-colorizer.lua'
   " Better Syntax Support for all languages
-  "Plug 'sheerun/vim-polyglot'
+  Plug 'sheerun/vim-polyglot'
   " JS Syntax
   Plug 'othree/yajs.vim'
   Plug 'othree/es.next.syntax.vim'

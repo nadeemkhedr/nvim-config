@@ -1,8 +1,8 @@
 let g:lightline = {
-      \ 'colorscheme': 'purify',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'filenameOrLastFolderOfIndex', 'modified', 'readonly'] ]
+      \             [ 'zoom', 'filenameOrLastFolderOfIndex', 'modified', 'readonly'] ]
       \ },
       \ 'inactive': {
       \   'left': [ [ 'filenameOrLastFolderOfIndex', 'modified', 'readonly' ] ]
@@ -10,6 +10,8 @@ let g:lightline = {
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
       \   'filenameOrLastFolderOfIndex': 'LightLineFixIndexFiles',
+      \   'nearestMethod': 'NearestMethodOrFunction',
+      \   'zoom': 'zoom#statusline',
       \ },
       \ }
 function! LightLineFixIndexFiles()
@@ -19,6 +21,10 @@ function! LightLineFixIndexFiles()
     else
         return expand("%:t")
     endif
+endfunction
+
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
