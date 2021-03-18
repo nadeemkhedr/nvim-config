@@ -35,8 +35,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'maxmellon/vim-jsx-pretty'
   " Go
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  Plug 'bitfield/vim-gitgo'
+  " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  " Plug 'bitfield/vim-gitgo'
   " Emmet
   Plug 'mattn/emmet-vim'
   " Cool Icons
@@ -48,10 +48,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " colorscheme
   Plug 'flazz/vim-colorschemes'
   Plug 'rafi/awesome-vim-colorschemes'
-  Plug 'christianchiarulli/onedark.vim'
+  " Plug 'christianchiarulli/onedark.vim'
   Plug 'christianchiarulli/nvcode-color-schemes.vim'
-  Plug 'nvim-treesitter/nvim-treesitter'
-  Plug 'nvim-treesitter/playground'
+
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
   " Intellisense
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -66,7 +66,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+  Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 
   Plug 'mileszs/ack.vim'
   " Mark gutter
