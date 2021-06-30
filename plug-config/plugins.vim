@@ -12,6 +12,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-eunuch'
   " Repeat stuff
   Plug 'tpope/vim-repeat'
+  " convert camel/snake/upper
+  Plug 'tpope/vim-abolish'
   " Surround
   Plug 'tpope/vim-surround'
   " Better Comments

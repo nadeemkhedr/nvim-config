@@ -73,7 +73,7 @@
     }
   },
   "yaml.schemas": {
-    "kubernetes": "/*.y*ml"
+    // "kubernetes": "/*.y*ml"
   },
   "cSpell.languageSettings": [
     {
@@ -81,5 +81,12 @@
       "enabled": false
     }
   ],
-  "cSpell.userWords": ["bson", "kubernetes", "mongodb", "uuid", "xlarge"]
+  "cSpell.userWords": [
+    "bson",
+    "kubernetes",
+    "mongodb",
+    "sixergame",
+    "uuid",
+    "xlarge"
+  ]
 }
